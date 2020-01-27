@@ -227,8 +227,6 @@ function getModelYears(inventory) {
   for (let i = 0; i < inventory.length; i++) {
     carYear.push(inventory[i].car_year)
   }
-    
-  console.log('This is the list ' + inventory[1].car_year);
 
   return carYear;
 }
@@ -246,13 +244,13 @@ function getModelYears(inventory) {
  * in the same order as they appear in the original inventory.
 */
 function getOlderCars(inventory, years) {
-  // var oldCars = [];
-  // for (let i = 0; i < inventory.length; i++) {
-  //   if (inventory.car_year < years) {
-  //     oldCars.push(inventory[i]);
-  //   }
-  // }
-  // return oldCars;
+  var oldCars = [];
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].car_year <= years) {
+      oldCars.push(inventory[i]);
+    }
+  }
+  return oldCars;
 }
 
 /**
